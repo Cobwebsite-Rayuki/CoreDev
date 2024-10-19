@@ -6,7 +6,7 @@ Before getting started, make sure you have the following installed on your machi
 
 1. .NET: You must have .NET installed and available in your PATH.
 2. VSCode: Use Visual Studio Code with the Aventus extension installed. You can find the documentation for the Aventus extension here: [Aventus Documentation](https://aventusjs.com/).
-3. Rayuki App Template: Register the Aventus application template by following the instructions from this GitHub repository: [DefaultApp Template](https://github.com/Cobwebsite-Rayuki/DefaultApp).
+3. Rayuki App Template: Register the Aventus application template by following the instructions from this GitHub repository: [DefaultApp Template](https://github.com/Cobwebsite-Rayuki/RayukiDefaultApp).
 
 ## Creating a New Application
 
