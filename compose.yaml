@@ -1,0 +1,48 @@
+services:
+  db:
+    image: mysql:8.0.31
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - nginx_network
+    command: --log_error_verbosity=1
+
+  server:
+    image: rayuki/core:dev
+    ports:
+      - 8080:8080
+    volumes:
+      - ./wwwroot/apps:/app/wwwroot/apps
+      - ./apps:/app/apps
+      - ./temp:/app/temp
+      - ./pwa:/app/wwwroot/pwa/custom
+      - ./Storage:/app/Storage
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development # Production / Development
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=db
+      - RAYUKI_FIRSTNAME=${RAYUKI_FIRSTNAME}
+      - RAYUKI_LASTNAME=${RAYUKI_LASTNAME}
+      - RAYUKI_USERNAME=${RAYUKI_USERNAME}
+      - RAYUKI_PASSWORD=${RAYUKI_PASSWORD}
+      - LOGGING__LOGLEVEL__DEFAULT=Error
+      - LOGGING__LOGLEVEL__MICROSOFT=Error
+      - APP_MANAGEMENT=${APP_MANAGEMENT}
+    networks:
+      - nginx_network
+    depends_on:
+      - db
+    restart: "always"
+
+volumes:
+  db_data:
+networks:
+  nginx_network:
