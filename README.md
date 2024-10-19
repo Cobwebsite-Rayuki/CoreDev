@@ -19,3 +19,5 @@ Before developing applications on Rayuki, you need to configure the required env
 - Linux/Mac: Run setup_env.sh
 
 These scripts will set up all the necessary environment variables for development.
+
+Then you can read the file [README.dev.md](https://github.com/Cobwebsite-Rayuki/CoreDev/blob/master/README.dev.md).

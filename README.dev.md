@@ -1,7 +1,5 @@
 # Rayuki Application Development
 
-This directory contains all the applications that will be developed and integrated with Rayuki. Follow the steps below to create and deploy a new application.
-
 ## Prerequisites
 
 Before getting started, make sure you have the following installed on your machine:
@@ -22,4 +20,4 @@ Before getting started, make sure you have the following installed on your machi
 ## Important Notes
 
 - After making changes to the C# code, you must stop the Docker container, right-click to export the C# code again, and then restart Docker to apply the changes.
-- You can follow tutorials and guides available at Rayuki Tutorials for more detailed instructions.
+- You can follow tutorials and guides available at [Rayuki Tutorials](https://tuto.rayuki.com) for more detailed instructions.
