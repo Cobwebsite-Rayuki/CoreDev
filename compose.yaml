@@ -15,7 +15,7 @@ services:
   server:
     image: rayuki/core:dev
     ports:
-      - 8080:8080
+      - 5000:8080
     volumes:
       - ./wwwroot/apps:/app/wwwroot/apps
       - ./apps:/app/apps
