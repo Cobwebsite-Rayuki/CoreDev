@@ -18,7 +18,9 @@ services:
       - 5000:8080
     volumes:
       - ./wwwroot/apps:/app/wwwroot/apps
+      - ./wwwroot/plugins:/app/wwwroot/autoload/plugins
       - ./apps:/app/apps
+      - ./plugins:/app/plugins
       - ./temp:/app/temp
       - ./pwa:/app/wwwroot/pwa/custom
       - ./Storage:/app/Storage
